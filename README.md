@@ -67,7 +67,7 @@ This project demonstrates advanced SQL querying for a structured medical clinic 
    SELECT CONCAT(d.given," ",d.surname)AS Doctor_name, CONCAT(p.given,"
    ",p.surname) AS Patient_name,
    CONCAT(DATE_FORMAT(a.dateOfAppointment,'%Y-%m-%d')," ",TIME_FORMAT(a.timeOfAppointment,'%H:%i')) AS DateAndTime,
-   a. RoomNo,a.Done AS STATUS,disease.diseasename AS Disease_name
+   a. RoomNo, a.Done AS STATUS, disease.diseasename AS Disease_name
    FROM doctor d, patient p, appointment a
    LEFT JOIN request ON request.appointmentID=a.appointmentID
    LEFT JOIN disease ON disease.DiseaseID = request.DiseaseID
@@ -75,7 +75,7 @@ This project demonstrates advanced SQL querying for a structured medical clinic 
    AND YEAR(a.dateOfAppointment)=2022
    AND d.doctorID = a.doctorID
    AND p.patientID = a.patientID
-   ORDER BY a.dateOFAppointment,a.timeOfAppointment;
+   ORDER BY a.dateOFAppointment, a.timeOfAppointment;
    ```
 
 3. **Appointments not in Richmond in 2021**
@@ -130,8 +130,7 @@ This project demonstrates advanced SQL querying for a structured medical clinic 
    or
    SELECT diseasename, 0 AS timesDiagnosed
    FROM disease
-   WHERE diseaseID NOT IN (SELECT DISTINCT diseaseid FROM request WHERE
-   diseaseid IS NOT NULL)
+   WHERE diseaseID NOT IN (SELECT DISTINCT diseaseid FROM request WHERE diseaseid IS NOT NULL)
    UNION
    SELECT diseasename,COUNT(*)
    FROM disease, request
@@ -143,10 +142,8 @@ This project demonstrates advanced SQL querying for a structured medical clinic 
 8. **Patient full name and request details, if more than 130 appointments**
    ```sql
    SELECT p.patientID, CONCAT(p.surname, ",", p.given) AS full_name,
-   COUNT(DISTINCT a.appointmentid) AS TimeVisited, COUNT(DISTINCT
-   r.testid) AS tests_ordered,
-   COUNT(DISTINCT diseaseid) AS diagnosed_disease, COUNT(DISTINCT
-   drugid) AS drugs_prescribed
+   COUNT(DISTINCT a.appointmentid) AS TimeVisited, COUNT(DISTINCT r.testid) AS tests_ordered,
+   COUNT(DISTINCT diseaseid) AS diagnosed_disease, COUNT(DISTINCT drugid) AS drugs_prescribed
    FROM patient p, appointment a LEFT JOIN request r ON
    r.appointmentid=a.appointmentid
    WHERE p.patientID = a.patientID
@@ -158,8 +155,7 @@ This project demonstrates advanced SQL querying for a structured medical clinic 
 
 9. **Doctor and patient info for all 2022 appointments**
    ```sql
-   SELECT (CONCAT('D', d.doctorID)) AS ID, CONCAT(d.surname, ", Dr ",
-   d.given) AS full_name, d.address,d.suburb,d.postcode
+   SELECT (CONCAT('D', d.doctorID)) AS ID, CONCAT(d.surname, ", Dr ", d.given) AS full_name, d.address,d.suburb,d.postcode
    FROM doctor d
    WHERE d.doctorID IN (SELECT DISTINCT doctorID FROM appointment WHERE
    YEAR(dateOfAppointment) ='2022')
@@ -175,8 +171,7 @@ This project demonstrates advanced SQL querying for a structured medical clinic 
 10. **Female doctors with supervisor info and years worked**
     ```sql
     SELECT CONCAT(d.surname," ",d.given) AS Doctor_name, CONCAT(s.surname," ",s.given) AS Supervisor_name,
-    TRUNCATE((DATEDIFF(IFNULL(d.resigned,SYSDATE()),d.joined)/365.25),0) AS
-    years_worked
+    TRUNCATE((DATEDIFF(IFNULL(d.resigned,SYSDATE()),d.joined)/365.25),0) AS years_worked
     FROM doctor d, doctor s
     WHERE d.supervisorID = s.DoctorID
     AND TRUNCATE((DATEDIFF(IFNULL(d.resigned,SYSDATE()),d.joined)/365.25),0)
