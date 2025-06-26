@@ -223,7 +223,7 @@ This project demonstrates advanced SQL querying for a structured medical clinic 
 2. **Set up** a MySQL or MariaDB instance (local or cloud).
 3. **Import the sample database** (from your instructor or assignment kit).
 4. **Check your database schema** (it may differ—adjust queries if needed).
-5. **Open** `SQL_Queries_PartB.sql` in SQL Workbench/J or MySQL Workbench.
+5. **Open** `SQL_Queries.sql` in SQL Workbench or MySQL.
 6. **Run each query independently** and review the results.
 
 > **Note:**  
