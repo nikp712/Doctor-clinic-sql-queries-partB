@@ -199,15 +199,37 @@ This project demonstrates advanced SQL querying for a structured medical clinic 
 
 
 13. **What does your histogram show, and why is it useful for business decision-making?**
-    - The histogram visualizes the distribution of patient ages across the database. Each bar represents a range of ages (for example, 32–36 years, 36–41 years, etc.), and the height of each bar indicates the number of patients in each age group.
-    
-    **Business Value & Insights:**
-    - Patient Demographics: The business can easily see which age groups are most and least represented in the patient population.
-    - Targeted Services: Knowing the most common age brackets helps the clinic design tailored healthcare packages or communication for different age groups.
-    - Resource Planning: Age distribution can inform staffing and service availability. E.g. pediatric vs. geriatric care.
-    - Marketing & Engagement: Marketing efforts can be better aligned with the demographics, focusing on age groups with the highest patient counts.
-    - Overall, the histogram transforms raw data into actionable insight, making it much easier for business leaders to understand their patient base and make strategic decisions.
-      
+    **a) Business Question**
+Which diseases are most frequently diagnosed each month, and how does this change over the year?
+This report helps clinic management and medical staff understand disease trends, enabling them to plan better resources, inventory (e.g., vaccines, drugs), and public health interventions.
+
+    **b) SQL Query**
+    ```sql
+    SELECT 
+    MONTHNAME(a.dateOfAppointment) AS month,
+    d.diseaseName,
+    COUNT(*) AS diagnosis_count
+    FROM 
+    appointment a
+    JOIN request r ON a.appointmentID = r.appointmentID
+    JOIN disease d ON r.diseaseID = d.diseaseID
+    WHERE 
+    YEAR(a.dateOfAppointment) = 2022
+    GROUP BY 
+    month, d.diseaseName
+    ORDER BY 
+    month, diagnosis_count DESC;
+    ```
+
+    - This query joins appointments, requests, and diseases to count how often each disease is diagnosed per month in 2022.
+    - The results can be visualized as a clustered bar chart or a heatmap to reveal trends.
+
+    **c) Visualization:**
+
+
+    ![image](https://github.com/user-attachments/assets/22a264a3-1343-472c-8ec1-77e9f2c8a99b)
+
+ 
 ---
 
 ## Key Insights
