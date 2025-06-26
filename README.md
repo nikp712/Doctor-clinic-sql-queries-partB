@@ -1,4 +1,5 @@
 # Doctor’s Clinic SQL Queries – Part B
+SQL portfolio project for Doctor’s Clinic database case
 
 ## Table of Contents
 1. [Overview](#overview)
