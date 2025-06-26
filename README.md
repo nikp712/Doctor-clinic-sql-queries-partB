@@ -1,4 +1,4 @@
-# Doctor’s Clinic SQL Queries – Part B
+![Screenshot (52)](https://github.com/user-attachments/assets/a6dc2e67-69a0-4537-8c48-1acde2464bdc)![Screenshot (52)](https://github.com/user-attachments/assets/a6dc2e67-69a0-4537-8c48-1acde2464bdc)# Doctor’s Clinic SQL Queries – Part B
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -36,7 +36,7 @@ This project demonstrates advanced SQL querying for a structured medical clinic 
 ---
 
 ## Preprocessing Steps
-1. Connected to the sample database (MySQL/MariaDB) provided by the course.
+1. Connected to the sample database (MySQL) provided by the course.
 2. Reviewed the case study, schema, and ER diagram.
 3. Prepared queries with proper joins, filtering, and groupings.
 
@@ -192,6 +192,21 @@ This project demonstrates advanced SQL querying for a structured medical clinic 
     OR timeVisitedPatient = (SELECT MIN(timeVisitedPatient) FROM dAttendedCount) );
     ```
 
+12. **Data Visualization: Patient Age Distribution**
+
+![Screenshot (52)](https://github.com/user-attachments/assets/6f396977-adcf-45c2-9956-b334a87894a8)
+
+
+13. **What does your histogram show, and why is it useful for business decision-making?**
+    The histogram visualizes the distribution of patient ages across the database. Each bar represents a range of ages (for example, 32–36 years, 36–41 years, etc.), and the height of each bar indicates the number of patients in each age group.
+    
+    **Business Value & Insights:**
+    - Patient Demographics: The business can easily see which age groups are most and least represented in the patient population.
+    - Targeted Services: Knowing the most common age brackets helps the clinic design tailored healthcare packages or communication for different age groups.
+    - Resource Planning: Age distribution can inform staffing and service availability. E.g. pediatric vs. geriatric care.
+    - Marketing & Engagement: Marketing efforts can be better aligned with the demographics, focusing on age groups with the highest patient counts.
+    - Overall, the histogram transforms raw data into actionable insight, making it much easier for business leaders to understand their patient base and make strategic decisions.
+      
 ---
 
 ## Key Insights
@@ -243,6 +258,6 @@ This project demonstrates advanced SQL querying for a structured medical clinic 
 ## Author
 
 Nhi Phan | RMIT University  
-Bachelor of Business Information Systems (Expected November 2025)
+Final Student Year, Bachelor of Business Information Systems (Expected November 2025)
 
 ---
