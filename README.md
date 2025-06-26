@@ -198,7 +198,7 @@ This project demonstrates advanced SQL querying for a structured medical clinic 
 
 
 13. **What does your histogram show, and why is it useful for business decision-making?**
-    The histogram visualizes the distribution of patient ages across the database. Each bar represents a range of ages (for example, 32–36 years, 36–41 years, etc.), and the height of each bar indicates the number of patients in each age group.
+    - The histogram visualizes the distribution of patient ages across the database. Each bar represents a range of ages (for example, 32–36 years, 36–41 years, etc.), and the height of each bar indicates the number of patients in each age group.
     
     **Business Value & Insights:**
     - Patient Demographics: The business can easily see which age groups are most and least represented in the patient population.
