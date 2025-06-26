@@ -198,7 +198,8 @@ This project demonstrates advanced SQL querying for a structured medical clinic 
 ![Screenshot (52)](https://github.com/user-attachments/assets/bdaec3e5-4c6d-4842-b366-02fceaa8993f)
 
 
-13. **What does your histogram show, and why is it useful for business decision-making?**
+13. **Report design**
+    
     **a) Business Question**
 Which diseases are most frequently diagnosed each month, and how does this change over the year?
 This report helps clinic management and medical staff understand disease trends, enabling them to plan better resources, inventory (e.g., vaccines, drugs), and public health interventions.
