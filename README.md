@@ -1,4 +1,4 @@
-![Screenshot (52)](https://github.com/user-attachments/assets/a6dc2e67-69a0-4537-8c48-1acde2464bdc)![Screenshot (52)](https://github.com/user-attachments/assets/a6dc2e67-69a0-4537-8c48-1acde2464bdc)# Doctor’s Clinic SQL Queries – Part B
+# Doctor’s Clinic SQL Queries – Part B
 
 ## Table of Contents
 1. [Overview](#overview)
