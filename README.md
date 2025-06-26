@@ -32,7 +32,7 @@ This project demonstrates advanced SQL querying for a structured medical clinic 
 ## Database Summary
 - **Dataset:** Doctor’s SuperClinic (RMIT).
 - **Key Tables:** `appointment`, `doctor`, `patient`, `room`, `request`, `disease`, etc.
-- **Privacy Notice:** Database and data are not included due to privacy. Queries are written based on the provided schema in the assignment PDF.
+>- **Privacy Notice:** Database and data are not included due to privacy. Queries are written based on the provided schema in the assignment PDF.
 
 ---
 
