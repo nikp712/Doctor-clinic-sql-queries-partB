@@ -194,7 +194,7 @@ This project demonstrates advanced SQL querying for a structured medical clinic 
 
 12. **Data Visualization: Patient Age Distribution**
 
-![Screenshot (52)](https://github.com/user-attachments/assets/6f396977-adcf-45c2-9956-b334a87894a8)
+![Screenshot (52)](https://github.com/user-attachments/assets/bdaec3e5-4c6d-4842-b366-02fceaa8993f)
 
 
 13. **What does your histogram show, and why is it useful for business decision-making?**
